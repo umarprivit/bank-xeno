@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 const features = [
   {
@@ -72,6 +73,11 @@ const CountdownTimer = () => {
 };
 
 export default function Home() {
+  useDocumentTitle({
+    title: 'Home',
+    description: 'Experience the future of global banking with BankXeno. Secure, accessible, and innovative financial solutions designed for the modern world.'
+  });
+
   return (
     <div className="min-h-screen bg-black">
       {/* Animated Background Elements */}

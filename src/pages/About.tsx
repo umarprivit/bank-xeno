@@ -1,65 +1,57 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 const missionPoints = [
   {
-    title: 'Global Accessibility',
-    description: 'Making financial services accessible to everyone, everywhere.',
-    icon: '🌍',
+    title: "Global Accessibility",
+    description:
+      "Making financial services accessible to everyone, everywhere.",
+    icon: "🌍",
   },
   {
-    title: 'Innovation',
-    description: 'Leveraging cutting-edge technology to revolutionize banking.',
-    icon: '🚀',
+    title: "Innovation",
+    description: "Leveraging cutting-edge technology to revolutionize banking.",
+    icon: "🚀",
   },
   {
-    title: 'Security',
-    description: 'Ensuring the highest standards of security and privacy.',
-    icon: '🔒',
+    title: "Security",
+    description: "Ensuring the highest standards of security and privacy.",
+    icon: "🔒",
   },
   {
-    title: 'Transparency',
-    description: 'Building trust through complete transparency in operations.',
-    icon: '✨',
+    title: "Transparency",
+    description: "Building trust through complete transparency in operations.",
+    icon: "✨",
   },
-];
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8 },
-};
-
-const teamMembers = [
-  {
-    name: 'Abdul Samad',
-    role: 'CEO & Founder',
-    bio: 'Former fintech executive with 15+ years of experience in digital banking and financial innovation.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-  },
-
-
 ];
 
 const values = [
   {
-    title: 'Innovation',
-    description: 'Pushing the boundaries of what\'s possible in banking technology.',
-    icon: '💡',
+    title: "Innovation",
+    description:
+      "Pushing the boundaries of what's possible in banking technology.",
+    icon: "💡",
   },
   {
-    title: 'Security',
-    description: 'Uncompromising commitment to protecting our customers\' assets.',
-    icon: '🛡️',
+    title: "Security",
+    description:
+      "Uncompromising commitment to protecting our customers' assets.",
+    icon: "🛡️",
   },
   {
-    title: 'Accessibility',
-    description: 'Making advanced banking solutions available to everyone.',
-    icon: '🌍',
+    title: "Accessibility",
+    description: "Making advanced banking solutions available to everyone.",
+    icon: "🌍",
   },
 ];
 
 const About = () => {
+  useDocumentTitle({
+    title: 'About Us',
+    description: 'Learn about BankXeno\'s mission to revolutionize global banking with cutting-edge technology, security, and innovation.'
+  });
+
   return (
     <div className="min-h-screen bg-black">
       {/* Animated Background Elements */}
@@ -107,8 +99,8 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-lg md:text-xl text-white/80 mb-8 md:mb-12 max-w-3xl mx-auto"
               >
-                We're building the future of banking with innovation, security, and
-                customer-centric solutions.
+                We're building the future of banking with innovation, security,
+                and customer-centric solutions.
               </motion.p>
             </div>
           </div>
@@ -131,8 +123,9 @@ const About = () => {
                     Our <span className="text-gradient">Mission</span>
                   </h2>
                   <p className="text-lg md:text-xl text-white/80 mb-4 md:mb-6">
-                    To empower individuals and businesses with cutting-edge financial
-                    solutions that are secure, accessible, and innovative.
+                    To empower individuals and businesses with cutting-edge
+                    financial solutions that are secure, accessible, and
+                    innovative.
                   </p>
                   <p className="text-white/70 text-sm md:text-base">
                     We believe that everyone deserves access to modern banking
@@ -270,9 +263,15 @@ const About = () => {
                     viewport={{ once: true }}
                     className="card hover-glow p-6 md:p-8"
                   >
-                    <div className="text-3xl md:text-4xl mb-4">{value.icon}</div>
-                    <h3 className="text-xl md:text-2xl font-bold mb-4">{value.title}</h3>
-                    <p className="text-white/80 text-sm md:text-base">{value.description}</p>
+                    <div className="text-3xl md:text-4xl mb-4">
+                      {value.icon}
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold mb-4">
+                      {value.title}
+                    </h3>
+                    <p className="text-white/80 text-sm md:text-base">
+                      {value.description}
+                    </p>
                   </motion.div>
                 ))}
               </div>
@@ -297,12 +296,10 @@ const About = () => {
                   Join Us on Our <span className="text-gradient">Journey</span>
                 </h2>
                 <p className="text-lg md:text-xl text-white/80 mb-6 md:mb-8 max-w-3xl mx-auto">
-                  Be part of the future of banking. Register your interest today.
+                  Be part of the future of banking. Register your interest
+                  today.
                 </p>
-                <Link
-                  to="/register-interest"
-                  className="btn-primary"
-                >
+                <Link to="/register-interest" className="btn-primary">
                   Register Interest
                 </Link>
               </motion.div>
@@ -314,4 +311,4 @@ const About = () => {
   );
 };
 
-export default About; 
+export default About;

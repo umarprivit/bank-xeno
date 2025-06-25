@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 const contactMethods = [
   {
@@ -41,6 +42,11 @@ const faqs = [
 ];
 
 export default function Contact() {
+  useDocumentTitle({
+    title: 'Contact Us',
+    description: 'Get in touch with BankXeno. We\'re here to help with any questions about our innovative banking solutions.'
+  });
+
   return (
     <div className="min-h-screen bg-black">
       {/* Animated Background Elements */}

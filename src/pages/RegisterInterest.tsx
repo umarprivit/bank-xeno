@@ -2,8 +2,14 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { submitRegisterInterest } from '../services/registerInterest';
 import type { RegisterInterestData } from '../services/registerInterest';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 export default function RegisterInterest() {
+  useDocumentTitle({
+    title: 'Register Interest',
+    description: 'Join the future of banking. Register your interest to be among the first to experience BankXeno\'s innovative financial solutions.'
+  });
+
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
