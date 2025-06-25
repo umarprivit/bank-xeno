@@ -90,17 +90,17 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden"
+            className="md:hidden bg-black/95 backdrop-blur-lg border-t border-white/10"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="px-4 pt-4 pb-6 space-y-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  className={`block px-3 py-3 rounded-md text-base font-medium transition-colors ${
                     location.pathname === link.path
-                      ? 'text-gradient'
-                      : 'text-white/80 hover:text-white'
+                      ? 'text-gradient bg-white/5'
+                      : 'text-white/80 hover:text-white hover:bg-white/5'
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -109,7 +109,7 @@ const Navbar = () => {
               ))}
               <Link
                 to="/register-interest"
-                className="block px-3 py-2 rounded-md text-base font-medium btn-primary"
+                className="block btn-primary text-center mt-4"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Register Interest

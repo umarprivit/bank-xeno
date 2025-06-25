@@ -49,33 +49,32 @@ const navigation = {
 export default function Footer() {
   return (
     <footer className="bg-black border-t border-white/10">
-      <div className="w-full px-4 sm:px-6 lg:px-8 py-12">
-        <div className="max-w-[2000px] mx-auto">
-          <nav className="flex flex-wrap justify-center -mx-5 -my-2">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <div className="max-w-6xl mx-auto">
+          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6 md:mb-8">
             {navigation.main.map((item) => (
-              <div key={item.name} className="px-5 py-2">
-                <Link
-                  to={item.href}
-                  className="text-base text-white/80 hover:text-white"
-                >
-                  {item.name}
-                </Link>
-              </div>
+              <Link
+                key={item.name}
+                to={item.href}
+                className="text-sm md:text-base text-white/80 hover:text-white transition-colors"
+              >
+                {item.name}
+              </Link>
             ))}
           </nav>
-          <div className="mt-8 flex justify-center space-x-6">
+          <div className="flex justify-center space-x-6 mb-6 md:mb-8">
             {navigation.social.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-white/80 hover:text-white"
+                className="text-white/80 hover:text-white transition-colors"
               >
                 <span className="sr-only">{item.name}</span>
-                <item.icon className="h-6 w-6" aria-hidden="true" />
+                <item.icon className="h-5 w-5 md:h-6 md:w-6" aria-hidden="true" />
               </a>
             ))}
           </div>
-          <p className="mt-8 text-center text-base text-white/60">
+          <p className="text-center text-xs md:text-sm text-white/60">
             &copy; {new Date().getFullYear()} BankXeno. All rights reserved.
           </p>
         </div>

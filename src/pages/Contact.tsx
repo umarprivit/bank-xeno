@@ -1,39 +1,42 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const contactMethods = [
   {
-    title: 'Email',
-    description: 'Get in touch with our team',
-    contact: 'contact@bankxeno.com',
-    icon: '✉️',
+    title: "Email",
+    description: "Get in touch with our team",
+    contact: "contact@bankxeno.com",
+    icon: "✉️",
   },
   {
-    title: 'Phone',
-    description: 'Speak with our support team',
-    contact: '+1 (555) 123-4567',
-    icon: '📞',
+    title: "Phone",
+    description: "Speak with our support team",
+    contact: "+1 (555) 123-4567",
+    icon: "📞",
   },
   {
-    title: 'Office',
-    description: 'Visit our headquarters',
-    contact: '123 Innovation Street, Tech City, TC 12345',
-    icon: '🏢',
+    title: "Office",
+    description: "Visit our headquarters",
+    contact: "123 Innovation Street, Tech City, TC 12345",
+    icon: "🏢",
   },
 ];
 
 const faqs = [
   {
-    question: 'When will BankXeno launch?',
-    answer: 'We are currently in the final stages of development and plan to launch in Q4 2024. Register your interest to be among the first to experience our services.',
+    question: "When will BankXeno launch?",
+    answer:
+      "We are currently in the final stages of development and plan to launch in Q4 2024. Register your interest to be among the first to experience our services.",
   },
   {
-    question: 'What services will BankXeno offer?',
-    answer: 'BankXeno will offer a comprehensive suite of digital banking services including checking accounts, savings accounts, international transfers, and innovative financial tools powered by AI.',
+    question: "What services will BankXeno offer?",
+    answer:
+      "BankXeno will offer a comprehensive suite of digital banking services including checking accounts, savings accounts, international transfers, and innovative financial tools powered by AI.",
   },
   {
-    question: 'How secure will my money be?',
-    answer: 'Security is our top priority. We implement state-of-the-art encryption, multi-factor authentication, and advanced fraud detection systems to ensure your funds and data are always protected.',
+    question: "How secure will my money be?",
+    answer:
+      "Security is our top priority. We implement state-of-the-art encryption, multi-factor authentication, and advanced fraud detection systems to ensure your funds and data are always protected.",
   },
 ];
 
@@ -65,24 +68,24 @@ export default function Contact() {
 
       <div className="w-full">
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-transparent to-blue-600/20 animate-gradient-x"></div>
-          
-          <div className="text-center relative z-10 w-full px-4 sm:px-6 lg:px-8">
+
+          <div className="text-center relative z-10 w-full max-w-4xl mx-auto">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-6xl md:text-7xl font-bold mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6"
             >
               Get in <span className="text-gradient">Touch</span>
             </motion.h1>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-white/80 mb-12 max-w-3xl mx-auto"
+              className="text-lg md:text-xl text-white/80 mb-8 md:mb-12 max-w-3xl mx-auto"
             >
               We're here to help. Choose your preferred way to reach us.
             </motion.p>
@@ -90,11 +93,11 @@ export default function Contact() {
         </section>
 
         {/* Contact Methods Section */}
-        <section className="py-20 relative w-full">
+        <section className="py-12 md:py-20 relative w-full">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-transparent"></div>
-          
-          <div className="w-full px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[2000px] mx-auto">
+
+          <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
               {contactMethods.map((method, index) => (
                 <motion.div
                   key={method.title}
@@ -102,14 +105,18 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="card hover-glow p-8"
+                  className="card hover-glow p-6 md:p-8"
                 >
-                  <div className="text-4xl mb-4">{method.icon}</div>
-                  <h3 className="text-2xl font-semibold mb-3 text-gradient">
+                  <div className="text-3xl md:text-4xl mb-4">{method.icon}</div>
+                  <h3 className="text-xl md:text-2xl font-semibold mb-3 text-gradient">
                     {method.title}
                   </h3>
-                  <p className="text-white/80 mb-4">{method.description}</p>
-                  <p className="text-white/70">{method.contact}</p>
+                  <p className="text-white/80 mb-4 text-sm md:text-base">
+                    {method.description}
+                  </p>
+                  <p className="text-white/70 text-sm md:text-base break-all">
+                    {method.contact}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -117,26 +124,27 @@ export default function Contact() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 relative w-full">
+        <section className="py-12 md:py-20 relative w-full">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/20 to-transparent"></div>
-          
-          <div className="w-full px-4 sm:px-6 lg:px-8">
+
+          <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
+              className="text-center mb-12 md:mb-16"
             >
-              <h2 className="text-4xl font-bold mb-6">
-                Frequently Asked <span className="text-gradient">Questions</span>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">
+                Frequently Asked{" "}
+                <span className="text-gradient">Questions</span>
               </h2>
-              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
                 Find answers to common questions about BankXeno.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[2000px] mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
               {faqs.map((faq, index) => (
                 <motion.div
                   key={faq.question}
@@ -144,12 +152,14 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="card hover-glow p-8"
+                  className="card hover-glow p-6 md:p-8"
                 >
-                  <h3 className="text-xl font-semibold mb-4 text-gradient">
+                  <h3 className="text-lg md:text-xl font-semibold mb-4 text-gradient">
                     {faq.question}
                   </h3>
-                  <p className="text-white/70">{faq.answer}</p>
+                  <p className="text-white/70 text-sm md:text-base">
+                    {faq.answer}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -157,27 +167,27 @@ export default function Contact() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 relative w-full">
+        <section className="py-12 md:py-20 relative w-full">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-transparent"></div>
-          
-          <div className="w-full px-4 sm:px-6 lg:px-8">
+
+          <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center max-w-[2000px] mx-auto"
+              className="text-center max-w-4xl mx-auto"
             >
-              <h2 className="text-4xl font-bold mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">
                 Ready to Join the <span className="text-gradient">Future</span>?
               </h2>
-              <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
-                Register your interest today and be among the first to experience
-                the next generation of banking.
+              <p className="text-lg md:text-xl text-white/80 mb-6 md:mb-8 max-w-3xl mx-auto">
+                Register your interest today and be among the first to
+                experience the next generation of banking.
               </p>
               <Link
                 to="/register-interest"
-                className="btn-primary"
+                className="btn-primary relative z-20"
               >
                 Register Interest
               </Link>
@@ -187,4 +197,4 @@ export default function Contact() {
       </div>
     </div>
   );
-} 
+}

@@ -13,7 +13,7 @@ function App() {
       <div className="min-h-screen bg-black">
         <CursorEffect />
         <Navbar />
-        <main className="w-[99vw]">
+        <main className="w-full overflow-x-hidden">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

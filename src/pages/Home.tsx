@@ -54,17 +54,17 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 max-w-xs md:max-w-2xl mx-auto">
       {Object.entries(timeLeft).map(([unit, value]) => (
         <motion.div
           key={unit}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="card hover-glow p-4"
+          className="card hover-glow p-3 md:p-4 text-center"
         >
-          <div className="text-gradient text-4xl font-bold mb-2">{value}</div>
-          <div className="text-white/60 text-sm uppercase">{unit}</div>
+          <div className="text-gradient text-2xl md:text-4xl font-bold mb-1 md:mb-2">{value}</div>
+          <div className="text-white/60 text-xs md:text-sm uppercase">{unit}</div>
         </motion.div>
       ))}
     </div>
@@ -99,80 +99,78 @@ export default function Home() {
 
       <div className="w-full">
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-transparent to-blue-600/20 animate-gradient-x"></div>
           
-          <div className="w-full px-4 sm:px-6 lg:px-8">
-            <div className="max-w-[2000px] mx-auto">
-              <div className="text-center relative z-10">
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className="text-6xl md:text-7xl font-bold mb-6"
-                >
-                  The Future of
-                  <span className="text-gradient"> Global Banking</span>
-                </motion.h1>
-                
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="text-xl text-white/80 mb-12 max-w-3xl mx-auto"
-                >
-                  Experience seamless, secure, and innovative banking solutions
-                  designed for the modern world.
-                </motion.p>
+          <div className="w-full max-w-6xl mx-auto">
+            <div className="text-center relative z-10">
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight"
+              >
+                The Future of
+                <span className="text-gradient"> Global Banking</span>
+              </motion.h1>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-lg md:text-xl text-white/80 mb-8 md:mb-12 max-w-3xl mx-auto px-4"
+              >
+                Experience seamless, secure, and innovative banking solutions
+                designed for the modern world.
+              </motion.p>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  className="space-y-8"
-                >
-                  <div className="text-white/80 mb-8">
-                    <p className="text-lg mb-4">Launching in</p>
-                    <CountdownTimer />
-                  </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="space-y-6 md:space-y-8"
+              >
+                <div className="text-white/80 mb-6 md:mb-8">
+                  <p className="text-base md:text-lg mb-4">Launching in</p>
+                  <CountdownTimer />
+                </div>
 
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Link
-                      to="/register-interest"
-                      className="btn-primary"
-                    >
-                      Register Interest
-                    </Link>
-                    <Link
-                      to="/about"
-                      className="btn-secondary"
-                    >
-                      Learn More
-                    </Link>
-                  </div>
-                </motion.div>
-              </div>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+                  <Link
+                    to="/register-interest"
+                    className="btn-primary text-center"
+                  >
+                    Register Interest
+                  </Link>
+                  <Link
+                    to="/about"
+                    className="btn-secondary text-center"
+                  >
+                    Learn More
+                  </Link>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
         {/* Features Section */}
-        <section className="py-20 relative">
+        <section className="py-12 md:py-20 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-transparent"></div>
           
           <div className="w-full px-4 sm:px-6 lg:px-8">
-            <div className="max-w-[2000px] mx-auto">
+            <div className="max-w-6xl mx-auto">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="text-4xl font-bold mb-12 text-center"
+                className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center"
               >
                 Why Choose <span className="text-gradient">BankXeno</span>
               </motion.h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                 {features.map((feature, index) => (
                   <motion.div
                     key={feature.title}
@@ -180,11 +178,11 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: index * 0.2 }}
                     viewport={{ once: true }}
-                    className="card hover-glow p-8"
+                    className="card hover-glow p-6 md:p-8"
                   >
-                    <div className="text-4xl mb-4">{feature.icon}</div>
-                    <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
-                    <p className="text-white/80">{feature.description}</p>
+                    <div className="text-3xl md:text-4xl mb-4">{feature.icon}</div>
+                    <h3 className="text-xl md:text-2xl font-bold mb-4">{feature.title}</h3>
+                    <p className="text-white/80 text-sm md:text-base">{feature.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -193,11 +191,11 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 relative">
+        <section className="py-12 md:py-20 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/20 to-transparent"></div>
           
           <div className="w-full px-4 sm:px-6 lg:px-8">
-            <div className="max-w-[2000px] mx-auto">
+            <div className="max-w-4xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -205,10 +203,11 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <h2 className="text-4xl font-bold mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">
                   Ready to Experience the <span className="text-gradient">Future</span>?
                 </h2>
-                <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
+                <p className="text-lg md:text-xl text-white/80 mb-6 md:mb-8 max-w-3xl mx-auto"
+                >
                   Join us in revolutionizing the way you bank. Register your interest today.
                 </p>
                 <Link

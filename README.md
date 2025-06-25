@@ -79,6 +79,38 @@ npm run build
 npm run deploy
 ```
 
+## Deployment
+
+### Deploy to Vercel
+
+1. **Push your code to GitHub** (if not already done)
+
+2. **Go to [Vercel Dashboard](https://vercel.com/dashboard)**
+
+3. **Import your GitHub repository**
+
+4. **Add Environment Variables** in Vercel:
+   - Go to Settings → Environment Variables
+   - Add these variables:
+     - `VITE_SUPABASE_URL`: Your Supabase project URL
+     - `VITE_SUPABASE_ANON_KEY`: Your Supabase anon key
+
+5. **Deploy** - Vercel will automatically build and deploy your site
+
+### Environment Variables for Production
+
+Make sure to set these in your Vercel dashboard:
+```bash
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key-here
+```
+
+### Build Command
+Vercel will automatically detect the build command from package.json, but if needed:
+```bash
+npm run build
+```
+
 ## Project Structure
 
 ```

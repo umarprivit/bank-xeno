@@ -10,23 +10,23 @@
 
 @layer components {
   .btn-primary {
-    @apply px-8 py-4 rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 hover:shadow-lg hover:shadow-purple-500/20;
+    @apply px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 hover:shadow-lg hover:shadow-purple-500/20 text-sm md:text-base;
   }
   
   .btn-secondary {
-    @apply px-8 py-4 rounded-lg font-semibold transition-all duration-300 bg-white/10 text-white hover:bg-white/20 hover:shadow-lg hover:shadow-white/10;
+    @apply px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold transition-all duration-300 bg-white/10 text-white hover:bg-white/20 hover:shadow-lg hover:shadow-white/10 text-sm md:text-base;
   }
   
   .container-custom {
-    @apply w-full max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8;
+    @apply w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
   .section-padding {
-    @apply py-20 md:py-32;
+    @apply py-12 md:py-20 lg:py-32;
   }
   
   .content-width {
-    @apply w-full max-w-[2000px] mx-auto;
+    @apply w-full max-w-6xl mx-auto;
   }
 
   .page-container {
@@ -38,7 +38,7 @@
   }
 
   .content-container {
-    @apply w-full max-w-[2000px] px-4 sm:px-6 lg:px-8 mx-auto;
+    @apply w-full max-w-6xl px-4 sm:px-6 lg:px-8 mx-auto;
   }
 
   .centered-content {
@@ -142,7 +142,7 @@
 
 /* Form Styles */
 input, textarea {
-  @apply bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-500;
+  @apply bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm md:text-base;
 }
 
 /* Link Styles */
@@ -152,13 +152,35 @@ a {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  @apply font-bold;
+  @apply font-bold leading-tight;
 }
 
 /* Responsive Text */
 @media (max-width: 640px) {
   h1 {
-    @apply text-4xl;
+    @apply text-3xl leading-tight;
+  }
+  h2 {
+    @apply text-2xl leading-tight;
+  }
+  h3 {
+    @apply text-xl leading-tight;
+  }
+  
+  /* Prevent horizontal scroll on mobile */
+  body {
+    @apply overflow-x-hidden;
+  }
+  
+  /* Smaller padding for mobile cards */
+  .card {
+    @apply p-4;
+  }
+}
+
+@media (min-width: 641px) {
+  h1 {
+    @apply text-5xl;
   }
   h2 {
     @apply text-3xl;
@@ -168,14 +190,17 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@media (min-width: 641px) {
-  h1 {
-    @apply text-6xl;
+/* Mobile-specific utilities */
+@media (max-width: 768px) {
+  .mobile-text-center {
+    @apply text-center;
   }
-  h2 {
-    @apply text-4xl;
+  
+  .mobile-px-4 {
+    @apply px-4;
   }
-  h3 {
-    @apply text-3xl;
+  
+  .mobile-mb-4 {
+    @apply mb-4;
   }
 }
